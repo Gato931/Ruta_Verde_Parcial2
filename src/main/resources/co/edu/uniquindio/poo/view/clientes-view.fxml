@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.ClientesController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15" />
+            </padding>
+            <Label text="Gestion de clientes" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <GridPane hgap="10" vgap="8">
+                <Label text="Documento / pasaporte" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtDocumento" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="Nombre completo" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Label text="Telefono" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <Label text="Correo" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <TextField fx:id="txtCorreo" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+                <Label text="Pais de origen" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtPais" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <Label text="Idioma preferido" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                <TextField fx:id="txtIdioma" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+            </GridPane>
+            <HBox spacing="12">
+                <Button text="Registrar cliente" onAction="#registrar" />
+                <Label fx:id="lblMensaje" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tblClientes">
+            <columns>
+                <TableColumn fx:id="colDocumento" text="Documento" prefWidth="150" />
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="220" />
+                <TableColumn fx:id="colCorreo" text="Correo" prefWidth="220" />
+                <TableColumn fx:id="colPais" text="Pais" prefWidth="150" />
+                <TableColumn fx:id="colIdioma" text="Idioma" prefWidth="130" />
+            </columns>
+            <BorderPane.margin>
+                <Insets top="10" right="15" bottom="15" left="15" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

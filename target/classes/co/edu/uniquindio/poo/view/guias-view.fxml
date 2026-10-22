@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.GuiasController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15" />
+            </padding>
+            <Label text="Gestion de guias" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <GridPane hgap="10" vgap="8">
+                <Label text="Identificacion" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtId" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="Nombre" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Label text="Idiomas (separados por coma)" GridPane.rowIndex="1"
+                    GridPane.columnIndex="0" />
+                <TextField fx:id="txtIdiomas" promptText="Espanol, Ingles" GridPane.rowIndex="1"
+                    GridPane.columnIndex="1" />
+                <Label text="Telefono" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+                <Label text="Tarifa por dia" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtTarifa" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            </GridPane>
+            <HBox spacing="12">
+                <Button text="Registrar guia" onAction="#registrar" />
+                <Label fx:id="lblMensaje" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tblGuias">
+            <columns>
+                <TableColumn fx:id="colId" text="Identificacion" prefWidth="140" />
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="220" />
+                <TableColumn fx:id="colIdiomas" text="Idiomas" prefWidth="240" />
+                <TableColumn fx:id="colTelefono" text="Telefono" prefWidth="150" />
+                <TableColumn fx:id="colTarifa" text="Tarifa / dia" prefWidth="140" />
+            </columns>
+            <BorderPane.margin>
+                <Insets top="10" right="15" bottom="15" left="15" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

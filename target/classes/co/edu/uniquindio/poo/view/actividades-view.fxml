@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.ActividadesController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15" />
+            </padding>
+            <Label text="Gestion de actividades" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <GridPane hgap="10" vgap="8">
+                <Label text="Codigo" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="Nombre" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Label text="Municipio" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="txtMunicipio" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <Label text="Duracion (horas)" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <TextField fx:id="txtDuracion" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+                <Label text="Precio por persona" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtPrecio" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <Label text="Cupo maximo por dia" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                <TextField fx:id="txtCupo" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+                <Label text="Dificultad" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <ComboBox fx:id="cmbDificultad" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            </GridPane>
+            <HBox spacing="12">
+                <Button text="Registrar actividad" onAction="#registrar" />
+                <Button text="Suspender / activar seleccionada" onAction="#cambiarEstado" />
+                <Label fx:id="lblMensaje" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tblActividades">
+            <columns>
+                <TableColumn fx:id="colCodigo" text="Codigo" prefWidth="90" />
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="190" />
+                <TableColumn fx:id="colMunicipio" text="Municipio" prefWidth="130" />
+                <TableColumn fx:id="colDuracion" text="Horas" prefWidth="70" />
+                <TableColumn fx:id="colPrecio" text="Precio/persona" prefWidth="120" />
+                <TableColumn fx:id="colCupo" text="Cupo" prefWidth="70" />
+                <TableColumn fx:id="colDificultad" text="Dificultad" prefWidth="100" />
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="120" />
+            </columns>
+            <BorderPane.margin>
+                <Insets top="10" right="15" bottom="15" left="15" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

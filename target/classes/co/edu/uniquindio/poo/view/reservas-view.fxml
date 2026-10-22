@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.ReservasController">
+    <top>
+        <VBox spacing="9">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15" />
+            </padding>
+            <Label text="Confirmacion de reservas"
+                style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <GridPane hgap="10" vgap="8">
+                <Label text="Documento cliente" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtCliente" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="Codigo producto" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <TextField fx:id="txtProducto" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Label text="Fecha viaje" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <DatePicker fx:id="dpFecha" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <Label text="Viajeros" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <TextField fx:id="txtViajeros" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+                <Label text="Guia (opcional)" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtGuia" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <Label text="Observaciones" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                <TextField fx:id="txtObservaciones" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+                <Label text="Numero de tarjeta" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <TextField fx:id="txtTarjeta" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                <Label text="Canal / voucher" GridPane.rowIndex="3" GridPane.columnIndex="2" />
+                <ComboBox fx:id="cmbCanal" GridPane.rowIndex="3" GridPane.columnIndex="3" />
+                <CheckBox fx:id="chkTransporte" text="Transporte desde hotel ($35.000 por viajero)"
+                    GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+                <CheckBox fx:id="chkSeguro" text="Seguro de viaje ($15.000 por viajero)"
+                    GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.columnSpan="2" />
+            </GridPane>
+            <HBox spacing="12">
+                <Button text="Confirmar reserva" onAction="#confirmar" />
+                <Label fx:id="lblMensaje" />
+            </HBox>
+            <TextArea fx:id="txtVoucher" prefRowCount="5" editable="false"
+                promptText="Aqui se mostrara el voucher emitido" />
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tblReservas">
+            <columns>
+                <TableColumn fx:id="colNumero" text="Numero" prefWidth="100" />
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="180" />
+                <TableColumn fx:id="colProducto" text="Producto" prefWidth="180" />
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120" />
+                <TableColumn fx:id="colViajeros" text="Viajeros" prefWidth="80" />
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="130" />
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="110" />
+            </columns>
+            <BorderPane.margin>
+                <Insets top="10" right="15" bottom="15" left="15" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

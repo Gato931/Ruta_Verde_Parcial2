@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.ReportesController" spacing="14">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <Label text="Reporte de reservas confirmadas"
+        style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <HBox spacing="10">
+        <Label text="Fecha inicial" />
+        <DatePicker fx:id="dpInicio" />
+        <Label text="Fecha final" />
+        <DatePicker fx:id="dpFin" />
+        <Button text="Generar reporte" onAction="#generar" />
+    </HBox>
+    <Separator />
+    <Label fx:id="lblIngresos" text="Ingresos del periodo: $0"
+        style="-fx-font-size: 17px; -fx-font-weight: bold;" />
+    <Label fx:id="lblProducto" text="Producto con mas viajeros: sin datos"
+        style="-fx-font-size: 16px;" />
+    <Label fx:id="lblMensaje" />
+    <Label wrapText="true"
+        text="El calculo toma unicamente reservas confirmadas cuyo viaje se encuentra entre las fechas inicial y final, incluidas ambas fechas." />
+</VBox>

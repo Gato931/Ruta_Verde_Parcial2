@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="co.edu.uniquindio.poo.controller.MainController">
+    <top>
+        <VBox spacing="4">
+            <padding>
+                <Insets top="14" right="18" bottom="10" left="18" />
+            </padding>
+            <Label text="RutaVerde Quindio" style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+            <Label text="Gestion de clientes, guias, productos, reservas y reportes" />
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" />
+    </center>
+</BorderPane>
